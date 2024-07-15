@@ -5,9 +5,8 @@ import { CategoryProvider } from './context/CategoryContext';
 
 const App: React.FC = () => {
   return (
-    <div className="NexupFrontendChallenge">
+    <div className="mt-10">
       <CategoryProvider>
-        <h1 className="text-left text-sm">Nexup Frontend Challenge</h1>
         <ProductManager />
       </CategoryProvider>
     </div>

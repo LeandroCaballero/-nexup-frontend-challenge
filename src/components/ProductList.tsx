@@ -32,9 +32,28 @@ export const ProductList: React.FC<ProductListProps> = ({
     Inactive: 'text-red-500',
   };
 
+  const handleSearch = (search: string) => {
+    const lowercaseSearch = search.toLowerCase();
+
+    const productsFiltered = productList.filter(
+      (product) =>
+        search === '' || product.name.toLowerCase().includes(lowercaseSearch),
+    );
+
+    setProductsToView(productsFiltered);
+  };
+
   return (
     <div className=" w-full md:w-11/12 mx-auto flex flex-col items-center justify-center">
       <div className="shadow-lg shadow-gray-400/90 w-full md:w-2/3 p-5 rounded-xl">
+        <div className="flex justify-end">
+          <input
+            type="text"
+            placeholder="Buscar"
+            className="w-fit rounded-lg px-2 py-1 border mb-2 focus:outline-none transition-colors duration-200 ease-out focus:border-blue-500"
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+        </div>
         <table className="w-full">
           <thead>
             <tr className="bg-gray-200 text-left">
