@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <div className="NexupFrontendChallenge">
       <CategoryProvider>
-        <h1 className="text-red-500">Nexup Frontend Challenge</h1>
+        <h1 className="text-left text-sm">Nexup Frontend Challenge</h1>
         <ProductManager />
       </CategoryProvider>
     </div>

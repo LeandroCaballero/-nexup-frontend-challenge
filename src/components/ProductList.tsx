@@ -27,14 +27,40 @@ export const ProductList: React.FC<ProductListProps> = ({
     setProductsToView(productsFiltered);
   }, [categorySelected, productList]);
 
+  const productsColor = {
+    Active: 'text-green-500',
+    Inactive: 'text-red-500',
+  };
+
   return (
-    <div>
-      <h1>Product List</h1>
-      <ul>
-        {productsToView.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
+    <div className="w-11/12 mx-auto flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-semibold text-center">Product List</h1>
+      <div className="shadow-lg w-2/3 p-5 rounded-xl">
+        <table className="w-full ">
+          <thead>
+            <tr className="bg-gray-200 text-left">
+              <th className="p-2">Estado</th>
+              <th className="p-2">Nombre</th>
+              <th className="p-2">Categoría</th>
+              <th className="p-2">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productsToView.map((product) => (
+              <tr key={product.id} className="border-b">
+                <td className={`${productsColor[product.status]} p-2`}>
+                  &#9679;
+                </td>
+                <td className="p-2">{product.name}</td>
+                <td className="p-2">{product.category}</td>
+                <td className="p-2">
+                  ${parseFloat(String(product.price)).toFixed(2)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
