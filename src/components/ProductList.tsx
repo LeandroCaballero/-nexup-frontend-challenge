@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { Product } from '../models/Product';
-import { CategoryContext } from '../context/CategoryContext';
-import { ProductCategory } from '../models/ProductCategory';
+import InputSearch from './InputSearch';
 
 interface ProductListProps {
   productList: Product[];
@@ -11,48 +10,16 @@ export const ProductList: React.FC<ProductListProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   productList,
 }) => {
-  const { categorySelected } = useContext(CategoryContext);
-
-  const [productsToView, setProductsToView] = useState<Product[]>([]);
-
-  useEffect(() => {
-    const productsFiltered = productList.filter((product) => {
-      if (categorySelected === ProductCategory.Todos) {
-        return product;
-      }
-
-      return product.category === categorySelected;
-    });
-
-    setProductsToView(productsFiltered);
-  }, [categorySelected, productList]);
-
   const productsColor = {
     Active: 'text-green-500',
     Inactive: 'text-red-500',
-  };
-
-  const handleSearch = (search: string) => {
-    const lowercaseSearch = search.toLowerCase();
-
-    const productsFiltered = productList.filter(
-      (product) =>
-        search === '' || product.name.toLowerCase().includes(lowercaseSearch),
-    );
-
-    setProductsToView(productsFiltered);
   };
 
   return (
     <div className=" w-full md:w-11/12 mx-auto flex flex-col items-center justify-center">
       <div className="shadow-lg shadow-gray-400/90 w-full md:w-2/3 p-5 rounded-xl">
         <div className="flex justify-end">
-          <input
-            type="text"
-            placeholder="Buscar"
-            className="w-fit rounded-lg px-2 py-1 border mb-2 focus:outline-none transition-colors duration-200 ease-out focus:border-blue-500"
-            onChange={(e) => handleSearch(e.target.value)}
-          />
+          <InputSearch />
         </div>
         <table className="w-full">
           <thead>
@@ -64,7 +31,7 @@ export const ProductList: React.FC<ProductListProps> = ({
             </tr>
           </thead>
           <tbody>
-            {productsToView.map((product) => (
+            {productList.map((product) => (
               <tr key={product.id} className="border-b">
                 <td className={`${productsColor[product.status]} p-2`}>
                   &#9679;

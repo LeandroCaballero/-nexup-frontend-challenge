@@ -5,36 +5,44 @@ interface Props {
   children?: ReactNode;
 }
 
-type CategoryContextType = {
+type FiltersContextType = {
   categorySelected: ProductCategory;
+  inputSearch: string;
   setCategorySelected: (categorySelected: ProductCategory) => void;
+  setInputSearch: (inputSearch: string) => void;
 };
 
-export const CategoryContext = createContext<CategoryContextType>({
+export const FiltersContext = createContext<FiltersContextType>({
   categorySelected: ProductCategory.Todos,
   setCategorySelected: () => {},
+  inputSearch: '',
+  setInputSearch: () => {},
 });
 
-export const CategoryProvider = ({ children }: Props) => {
+export const FiltersProvider = ({ children }: Props) => {
   const [categorySelected, setCategorySelected] = useState<ProductCategory>(
     ProductCategory.Todos,
   );
+
+  const [inputSearch, setInputSearch] = useState('');
 
   const contextValue = useMemo(
     () => ({
       categorySelected,
       setCategorySelected,
+      inputSearch,
+      setInputSearch,
     }),
-    [categorySelected, setCategorySelected],
+    [categorySelected, inputSearch],
   );
 
   return (
-    <CategoryContext.Provider value={contextValue}>
+    <FiltersContext.Provider value={contextValue}>
       {children}
-    </CategoryContext.Provider>
+    </FiltersContext.Provider>
   );
 };
 
-CategoryProvider.defaultProps = {
+FiltersProvider.defaultProps = {
   children: null,
 };

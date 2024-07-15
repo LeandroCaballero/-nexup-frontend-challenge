@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { CategoryContext } from '../context/CategoryContext';
+import { FiltersContext } from '../context/FiltersContext';
 import { ProductCategory } from '../models/ProductCategory';
 
 interface CategoryFilterProps {}
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = () => {
-  const { categorySelected, setCategorySelected } = useContext(CategoryContext);
+  const { categorySelected, setCategorySelected } = useContext(FiltersContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (setCategorySelected) {
