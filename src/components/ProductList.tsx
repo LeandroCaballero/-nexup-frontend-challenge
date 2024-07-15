@@ -33,10 +33,9 @@ export const ProductList: React.FC<ProductListProps> = ({
   };
 
   return (
-    <div className="w-11/12 mx-auto flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-semibold text-center">Product List</h1>
-      <div className="shadow-lg w-2/3 p-5 rounded-xl">
-        <table className="w-full ">
+    <div className=" w-full md:w-11/12 mx-auto flex flex-col items-center justify-center">
+      <div className="shadow-lg shadow-gray-400/90 w-full md:w-2/3 p-5 rounded-xl">
+        <table className="w-full">
           <thead>
             <tr className="bg-gray-200 text-left">
               <th className="p-2">Estado</th>

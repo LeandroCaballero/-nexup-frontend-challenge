@@ -20,7 +20,8 @@ export const ProductManager: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-semibold">Productos</h1>
       <CategoryFilter />
       <ProductList productList={products} />
     </div>

@@ -19,6 +19,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = () => {
       id=""
       value={categorySelected}
       onChange={(e) => handleChange(e)}
+      className="px-3 py-1 border rounded-lg mt-3"
     >
       <option value="Todos">Todos</option>
       <option value="Fruit">Fruit</option>
