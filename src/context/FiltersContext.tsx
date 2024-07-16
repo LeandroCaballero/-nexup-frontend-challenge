@@ -8,8 +8,10 @@ interface Props {
 type FiltersContextType = {
   categorySelected: ProductCategory;
   inputSearch: string;
+  stockProducts: boolean;
   setCategorySelected: (categorySelected: ProductCategory) => void;
   setInputSearch: (inputSearch: string) => void;
+  setStockProducts: (stockProducts: boolean) => void;
 };
 
 export const FiltersContext = createContext<FiltersContextType>({
@@ -17,6 +19,8 @@ export const FiltersContext = createContext<FiltersContextType>({
   setCategorySelected: () => {},
   inputSearch: '',
   setInputSearch: () => {},
+  stockProducts: false,
+  setStockProducts: () => {},
 });
 
 export const FiltersProvider = ({ children }: Props) => {
@@ -26,14 +30,18 @@ export const FiltersProvider = ({ children }: Props) => {
 
   const [inputSearch, setInputSearch] = useState('');
 
+  const [stockProducts, setStockProducts] = useState(false);
+
   const contextValue = useMemo(
     () => ({
       categorySelected,
       setCategorySelected,
       inputSearch,
       setInputSearch,
+      stockProducts,
+      setStockProducts,
     }),
-    [categorySelected, inputSearch],
+    [categorySelected, inputSearch, stockProducts],
   );
 
   return (

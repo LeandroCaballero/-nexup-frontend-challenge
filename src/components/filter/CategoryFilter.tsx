@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { FiltersContext } from '../context/FiltersContext';
-import { ProductCategory } from '../models/ProductCategory';
+import { FiltersContext } from '../../context/FiltersContext';
+import { ProductCategory } from '../../models/ProductCategory';
 
 interface CategoryFilterProps {}
 
@@ -19,7 +19,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = () => {
       id=""
       value={categorySelected}
       onChange={(e) => handleChange(e)}
-      className="px-3 py-1 border rounded-lg mt-3"
+      className="px-3 py-1 border rounded-lg w-1/2 md:w-fit"
     >
       <option value="Todos">Todos</option>
       <option value="Fruit">Fruit</option>

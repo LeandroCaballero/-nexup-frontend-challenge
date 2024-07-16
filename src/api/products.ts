@@ -11,6 +11,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Fruit,
       price: 2.5,
+      stock: 7,
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Fruit,
       price: 1.75,
+      stock: 3,
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Vegetables,
       price: 3.0,
+      stock: 25,
     },
     {
       id: 4,
@@ -32,6 +35,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Vegetables,
       price: 1.99,
+      stock: 5,
     },
     {
       id: 5,
@@ -39,6 +43,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Meat,
       price: 12.5,
+      stock: 9,
     },
     {
       id: 6,
@@ -46,6 +51,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Meat,
       price: 9.99,
+      stock: 3,
     },
     {
       id: 7,
@@ -53,6 +59,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Meat,
       price: 2.0,
+      stock: 3,
     },
     {
       id: 8,
@@ -60,6 +67,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Meat,
       price: 1.5,
+      stock: 4,
     },
     {
       id: 9,
@@ -67,6 +75,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Vegetables,
       price: 3.75,
+      stock: 3,
     },
     {
       id: 10,
@@ -74,6 +83,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Vegetables,
       price: 2.25,
+      stock: 0,
     },
     {
       id: 11,
@@ -81,6 +91,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Fruit,
       price: 1.99,
+      stock: 7,
     },
     {
       id: 12,
@@ -88,6 +99,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Vegetables,
       price: 2.25,
+      stock: 2,
     },
     {
       id: 13,
@@ -95,6 +107,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Fruit,
       price: 3.5,
+      stock: 0,
     },
     {
       id: 14,
@@ -102,6 +115,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Vegetables,
       price: 1.0,
+      stock: 0,
     },
     {
       id: 15,
@@ -109,6 +123,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Meat,
       price: 15.99,
+      stock: 1,
     },
     {
       id: 16,
@@ -116,6 +131,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Fruit,
       price: 2.99,
+      stock: 17,
     },
     {
       id: 17,
@@ -123,6 +139,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Fruit,
       price: 3.49,
+      stock: 12,
     },
     {
       id: 18,
@@ -130,6 +147,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Fruit,
       price: 1.75,
+      stock: 13,
     },
     {
       id: 19,
@@ -137,6 +155,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Active,
       category: ProductCategory.Vegetables,
       price: 1.25,
+      stock: 1,
     },
     {
       id: 20,
@@ -144,6 +163,7 @@ export const getProductList = (): Product[] => {
       status: ProductStatus.Inactive,
       category: ProductCategory.Meat,
       price: 10.75,
+      stock: 1,
     },
   ];
 
